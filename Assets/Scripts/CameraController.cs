@@ -44,7 +44,7 @@ public class CameraController : MonoBehaviour
         transform.position = new Vector3(
 
             transform.position.x,
-            Mathf.Clamp(transform.position.y, MinY, MaxY),                       //säger att y inte kan vara någonstans utanför min och max
+            Mathf.Clamp(transform.position.y, MinY, MaxY),                       //Makes sure Y isn't outside MinY or MaxY
             0
         );
 
