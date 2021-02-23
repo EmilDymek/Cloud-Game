@@ -8,7 +8,15 @@ public class CloudBehaviour : MonoBehaviour
     bool Absorbing = false;
     public Transform tf;
     public GameObject PlayerCloud;
-    
+    public GameObject CloudController;
+    public float CloudSize;
+
+    private void Awake()
+    {
+        tf.localScale = new Vector3(0, 0, 0);
+        CloudSize = Random.Range(0.4f, 1.2f);
+    }
+
 
     void Update()
     {
@@ -22,7 +30,16 @@ public class CloudBehaviour : MonoBehaviour
             {
                 PlayerBehaviour Player = PlayerCloud.GetComponent<PlayerBehaviour>();
                 Player.Absorbing = false;
+                CloudMan cloudController = CloudController.GetComponent<CloudMan>();
+                cloudController.CloudIndex--;
                 Destroy(gameObject);
+            }
+        }
+        else
+        {
+            if (tf.localScale.x < CloudSize)
+            {
+                tf.localScale += new Vector3(0.01f, 0.01f, 0);
             }
         }
     }

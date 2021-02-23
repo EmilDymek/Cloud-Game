@@ -137,3 +137,4 @@ MonoBehaviour:
   rb: {fileID: 1817264802587048626}
   tf: {fileID: 1817264802587048624}
   PlayerCloud: {fileID: 0}
+  CloudController: {fileID: 0}
