@@ -455,7 +455,7 @@ Transform:
   m_GameObject: {fileID: 126048421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 3, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 532432534}
   - {fileID: 700640625}
@@ -565,7 +565,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCloud: {fileID: 126048421}
+  RainFX: {fileID: 532432533}
+  StormFX1: {fileID: 700640624}
+  StormFX2: {fileID: 856049298}
+  StormFX3: {fileID: 1940684144}
   Absorbing: 0
+  Raining: 0
+  PlayerRainSize: 2
+  PlayerMinSize: 0.1
 --- !u!1 &165251644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,6 +1171,11 @@ Transform:
   m_Father: {fileID: 1932534682}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &532432533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1043258404649569922, guid: d4fc10edf573e7c41af1b5b81645a59b, type: 3}
+  m_PrefabInstance: {fileID: 1432084219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &532432534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1043258404649569921, guid: d4fc10edf573e7c41af1b5b81645a59b, type: 3}
@@ -1579,6 +1591,11 @@ Transform:
   m_Father: {fileID: 2010615854}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &700640624 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 642245640511387874, guid: 203453b9b44d88c4fbff78e4ae4497d8, type: 3}
+  m_PrefabInstance: {fileID: 30357871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &700640625 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 642245640511387885, guid: 203453b9b44d88c4fbff78e4ae4497d8, type: 3}
@@ -1666,6 +1683,11 @@ Transform:
   m_Father: {fileID: 2010615854}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &856049298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1570359385368241737, guid: 4e8a8275ec0854f41a4c46c632a0f8c6, type: 3}
+  m_PrefabInstance: {fileID: 1226648111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &856049299 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1570359385368241736, guid: 4e8a8275ec0854f41a4c46c632a0f8c6, type: 3}
@@ -3132,6 +3154,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1940684144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8809650356994702844, guid: 145853d531663b4448a18a6f86b29e0c, type: 3}
+  m_PrefabInstance: {fileID: 1054828753}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1940684145 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8809650356994702819, guid: 145853d531663b4448a18a6f86b29e0c, type: 3}
