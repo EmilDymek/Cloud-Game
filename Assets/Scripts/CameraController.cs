@@ -6,13 +6,13 @@ public class CameraController : MonoBehaviour
 {                                                                                //:::::Here be variables:::::
     private Vector2 CameraPosition;                                              //Keeps track of camera's position
     private Vector2 CameraDirection;                                             //Keeps track of the camera's direction
-    public readonly float MaxX = 33.62f;                                        //This is the eastern border of the map
-    public readonly float MinX = -33.62f;                                       //This is the western border of the map
+    public readonly float MaxX = 24.74f;                                        //This is the eastern border of the map
+    public readonly float MinX = -24.74f;                                       //This is the western border of the map
     private readonly float MaxY = 11.2f;                                         //This is the "roof" of the map
-    private readonly float MinY = -11.2f;                                        //This is the "floor" of the map 
-    private readonly float Wrap = 92.14f;                                       //This is one camera's space away from a border plus a camera's space off the border on the opposite side //57.601f
-    private readonly float FarMaxX = 58.5f;                                     //This is one camera's space away from the eastern border //37.69f 46.08
-    private readonly float FarMinX = -58.5f;                                    //This is one camera's space away from the western border //-37.69f
+    private readonly float MinY = -3.7f;                                        //This is the "floor" of the map 
+    private readonly float Wrap = 92f;                                       //This is one camera's space away from a border plus a camera's space off the border on the opposite side //57.601f
+    private readonly float FarMaxX = 67.4f;                                     //This is one camera's space away from the eastern border //37.69f 46.08
+    private readonly float FarMinX = -67.4f;                                    //This is one camera's space away from the western border //-37.69f
     private readonly float CameraVelocity;
     [SerializeField] private float CameraSpeed = 10.0f;                          //Change this variable to change camera movement speed
     private Vector3 StartPos;

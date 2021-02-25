@@ -45,7 +45,6 @@ public class TreeBehaviour : MonoBehaviour
     {
         if (collision.tag == "Rain")
         {
-            Debug.Log("rainy rain");
             RainedOn = true;
         }
     }
@@ -53,7 +52,6 @@ public class TreeBehaviour : MonoBehaviour
     {
         if (collision.tag == "Rain")
         {
-            Debug.Log("No rain, very sad");
             RainedOn = false;
         }
     }
