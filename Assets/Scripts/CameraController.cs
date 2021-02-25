@@ -15,6 +15,9 @@ public class CameraController : MonoBehaviour
     private readonly float FarMinX = -54.979f;                                    //This is one camera's space away from the western border //-37.69f
     private readonly float CameraVelocity;
     [SerializeField] private float CameraSpeed = 10.0f;                          //Change this variable to change camera movement speed
+    private Vector3 StartPos;
+    private Vector3 TargetPos;
+    public Transform FollowTarget;
 
     public Rigidbody rb;
 
@@ -23,6 +26,7 @@ public class CameraController : MonoBehaviour
 
     void Awake()                                                                 //This happens once the object the script is attached to is instansiated
     {
+        StartPos = transform.position;
         rb = GetComponent<Rigidbody>();
         Camera1 = transform.Find("Camera 1");                                    //This associates the variable to the game object Camera 1
         Camera2 = transform.Find("Camera 2");                                    //This associates the variable to the game object Camera 2
@@ -34,11 +38,18 @@ public class CameraController : MonoBehaviour
         CameraCheck();                                                           //Calls the camera loop function once per frame
     }
 
+    //void FixedUpdate()
+    //{
+    //    TargetPos = new Vector3(FollowTarget.position.x, FollowTarget.position.y, transform.position.z);                //Updates target position to the FollowTarget's position
+    //    Vector3 Velocity = (TargetPos - transform.position) * GM.CameraFollowSpeed;                                     //Stores the distance between the current possition and the target position
+    //    transform.position = Vector3.SmoothDamp(transform.position, TargetPos, ref Velocity, 1.0f, Time.deltaTime);     //Moves the Camera to the target position using Smoothdamp function
+    //}
+
     void GetInput()                                                              //This function checks for player input and moves the camera accordingly
     {                                                                            //Camera direction is not exclusive to either up, down, left or right.
         //if (Input.GetAxis("Mouse X") != 0)
         //{
-        //    transform.position += new Vector3(Input.GetAxisRaw("Mouse X") * Time.deltaTime * CameraSpeed, 
+        //    transform.position += new Vector3(Input.GetAxisRaw("Mouse X") * Time.deltaTime * CameraSpeed,
         //                                       Input.GetAxisRaw("Mouse Y") * Time.deltaTime * CameraSpeed, 0.0f);
         //}
         transform.position = new Vector3(
@@ -51,7 +62,7 @@ public class CameraController : MonoBehaviour
         CameraDirection = Vector2.zero;                                          //Zeroes the cameras direction
         if (Input.GetKey(KeyCode.W))                                             //Checks if W is being pressed
         {
-             
+
             if (Camera1.position.y < MaxY && Camera2.position.y < MaxY)          //Checks if the cameras have reached the roof of the map
             {
                 CameraDirection += Vector2.up;                                   //Sets direction to up if W is being pressed

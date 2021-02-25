@@ -14,7 +14,7 @@ public class CloudBehaviour : MonoBehaviour
     private void Awake()
     {
         tf.localScale = new Vector3(0, 0, 0);
-        CloudSize = Random.Range(0.4f, 1.2f);
+        CloudSize = Random.Range(0.2f, 0.8f);
     }
 
 
@@ -46,11 +46,14 @@ public class CloudBehaviour : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D Hitinfo)
     {
-        if (Hitinfo.tag == "Player")
+        PlayerBehaviour Player = PlayerCloud.GetComponent<PlayerBehaviour>();
+        if (Player.transform.localScale.x > CloudSize)
         {
-            Absorbing = true;
-            PlayerBehaviour Player = PlayerCloud.GetComponent<PlayerBehaviour>();
-            Player.Absorbing = true;
+            if (Hitinfo.tag == "Player")
+            {
+                Absorbing = true;
+                Player.Absorbing = true;
+            }
         }
     }
 }
