@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    public GameObject PlayerCloud;
-    public GameObject RainFX;
+    public GameObject PlayerCloud1;
+    public GameObject PlayerCloud2;
+    public GameObject RainFX1;
+    public GameObject RainFX2;
     public GameObject StormFX1;
     public GameObject StormFX2;
     public GameObject StormFX3;
@@ -24,7 +26,8 @@ public class PlayerBehaviour : MonoBehaviour
     public Text Treescore;
     void Start()
     {
-        RainFX.SetActive(false);
+        RainFX1.SetActive(false);
+        RainFX2.SetActive(false);
         StormFX1.SetActive(false);
         StormFX2.SetActive(false);
         StormFX3.SetActive(false);
@@ -58,14 +61,18 @@ public class PlayerBehaviour : MonoBehaviour
         //    Direction += Vector2.right;                                    //Sets direction to right if D is being pressed
         //}
 
-       
+
 
         if (Absorbing)
-            PlayerCloud.transform.localScale += new Vector3(0.6f, 0.6f, 0) * Time.deltaTime;
-
-        if (PlayerCloud.transform.localScale.x > PlayerRainSize)
         {
-            RainFX.SetActive(true);
+            PlayerCloud1.transform.localScale += new Vector3(0.6f, 0.6f, 0) * Time.deltaTime;
+            PlayerCloud2.transform.localScale += new Vector3(0.6f, 0.6f, 0) * Time.deltaTime;
+        }
+
+        if (PlayerCloud1.transform.localScale.x > PlayerRainSize)
+        {
+            RainFX1.SetActive(true);
+            RainFX2.SetActive(true);
             Raining = true;
         }
 
@@ -74,14 +81,16 @@ public class PlayerBehaviour : MonoBehaviour
             RainBox.SetActive(true);
 
 
-            if (PlayerCloud.transform.localScale.x >  PlayerMinSize)
+            if (PlayerCloud1.transform.localScale.x >  PlayerMinSize)
             {
-                PlayerCloud.transform.localScale -= new Vector3(0.2f, 0.2f, 0) * Time.deltaTime;
+                PlayerCloud1.transform.localScale -= new Vector3(0.2f, 0.2f, 0) * Time.deltaTime;
+                PlayerCloud2.transform.localScale -= new Vector3(0.2f, 0.2f, 0) * Time.deltaTime;
             }
             else
             {
                 Raining = false;
-                RainFX.SetActive(false);
+                RainFX1.SetActive(false);
+                RainFX2.SetActive(false);
                 RainBox.SetActive(false);
             }
         }
