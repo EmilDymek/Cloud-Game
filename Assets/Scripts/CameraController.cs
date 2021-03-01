@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     private Vector2 CameraDirection;                                             //Keeps track of the camera's direction
     public readonly float MaxX = 24.74f;                                        //This is the eastern border of the map
     public readonly float MinX = -24.74f;                                       //This is the western border of the map
-    private readonly float MaxY = 11.2f;                                         //This is the "roof" of the map
+    private readonly float MaxY = 20;                                         //This is the "roof" of the map
     private readonly float MinY = -3.7f;                                        //This is the "floor" of the map 
     private readonly float Wrap = 92f;                                       //This is one camera's space away from a border plus a camera's space off the border on the opposite side //57.601f
     private readonly float FarMaxX = 67.4f;                                     //This is one camera's space away from the eastern border //37.69f 46.08

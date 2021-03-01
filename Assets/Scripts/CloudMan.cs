@@ -11,12 +11,6 @@ public class CloudMan : MonoBehaviour
     private float SpawnDelay;
     public int CloudIndex = 0;
     public int TreeIndex = 0;
-    //-1.27, -1.4
-
-    void Start()
-    {
-        
-    }
 
 
     void Update()
