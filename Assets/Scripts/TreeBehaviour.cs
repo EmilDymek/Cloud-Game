@@ -10,6 +10,7 @@ public class TreeBehaviour : MonoBehaviour
     public Transform Stage2;
     public GameObject _Stage1;
     public GameObject _Stage2;
+    public GameObject PlayerCloud;
 
     private void Start()
     {
@@ -28,6 +29,8 @@ public class TreeBehaviour : MonoBehaviour
                 else
                 {
                     _Stage1.SetActive(false);
+                    PlayerBehaviour Player = PlayerCloud.GetComponent<PlayerBehaviour>();
+                    Player.score++;
                     _Stage2.SetActive(true);
                 }
             }
@@ -35,6 +38,9 @@ public class TreeBehaviour : MonoBehaviour
             {
                 if (Stage2.transform.localScale.x < 2.5)
                 {
+                   
+                 
+
                     Stage2.transform.localScale += new Vector3(0.2f, 0.2f, 0) * Time.deltaTime;
                 }
             }

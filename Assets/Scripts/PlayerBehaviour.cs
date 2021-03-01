@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -20,7 +20,8 @@ public class PlayerBehaviour : MonoBehaviour
     private float PlayerMinSize = 0.44f;
     private Vector2 Direction;
     private Vector2 Position;
-
+    public int score;
+    public Text Treescore;
     void Start()
     {
         RainFX.SetActive(false);
@@ -31,6 +32,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Update()
     {
+        Treescore.text = "Score ="+score.ToString();
         //Direction = Vector2.zero;                                          //Zeroes the cameras direction
         //if (Input.GetKey(KeyCode.W))                                             //Checks if W is being pressed
         //{
@@ -56,7 +58,7 @@ public class PlayerBehaviour : MonoBehaviour
         //    Direction += Vector2.right;                                    //Sets direction to right if D is being pressed
         //}
 
-
+       
 
         if (Absorbing)
             PlayerCloud.transform.localScale += new Vector3(0.6f, 0.6f, 0) * Time.deltaTime;

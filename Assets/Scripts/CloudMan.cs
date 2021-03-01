@@ -29,7 +29,7 @@ public class CloudMan : MonoBehaviour
 
     void SpawnCloud()
     {
-        SpawnLocation.Set(Random.Range(-37, 37), Random.Range(4, 15.2f), 0);
+        SpawnLocation.Set(Random.Range(-30, 30), Random.Range(4, 15.2f), 0);
         Instantiate(Cloud, SpawnLocation, Quaternion.identity);
         SpawnDelay = 0.1f;
         CloudIndex++;
@@ -37,7 +37,7 @@ public class CloudMan : MonoBehaviour
 
     void SpawnTree()
     {
-        TreeSpawnLocation.Set(Random.Range(-37, 37), Random.Range(-1.27f, -1.4f), 0);
+        TreeSpawnLocation.Set(Random.Range(-30, 30), Random.Range(-1.27f, -1.4f), 0);
         Instantiate(Tree, TreeSpawnLocation, Quaternion.identity);
         SpawnDelay = 0.01f;
         TreeIndex++;
