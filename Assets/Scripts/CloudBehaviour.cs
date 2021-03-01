@@ -24,7 +24,7 @@ public class CloudBehaviour : MonoBehaviour
         {
             if (tf.localScale.x > 0)
             {
-                tf.localScale -= new Vector3(0.01f, 0.01f, 0);
+                tf.localScale -= new Vector3(2f, 2f, 0) * Time.deltaTime;
             }
             else
             {
@@ -39,7 +39,7 @@ public class CloudBehaviour : MonoBehaviour
         {
             if (tf.localScale.x < CloudSize)
             {
-                tf.localScale += new Vector3(0.01f, 0.01f, 0);
+                tf.localScale += new Vector3(2f, 2f, 0) * Time.deltaTime;
             }
         }
     }

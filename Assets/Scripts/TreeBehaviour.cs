@@ -23,7 +23,7 @@ public class TreeBehaviour : MonoBehaviour
             {
                 if (Stage1.transform.localScale.x < 2.5)
                 {
-                    Stage1.transform.localScale += new Vector3(0.002f, 0.002f, 0);
+                    Stage1.transform.localScale += new Vector3(0.4f, 0.4f, 0) * Time.deltaTime;
                 }
                 else
                 {
@@ -35,7 +35,7 @@ public class TreeBehaviour : MonoBehaviour
             {
                 if (Stage2.transform.localScale.x < 2.5)
                 {
-                    Stage2.transform.localScale += new Vector3(0.001f, 0.001f, 0);
+                    Stage2.transform.localScale += new Vector3(0.2f, 0.2f, 0) * Time.deltaTime;
                 }
             }
         }

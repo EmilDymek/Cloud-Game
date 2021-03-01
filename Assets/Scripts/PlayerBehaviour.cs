@@ -59,7 +59,7 @@ public class PlayerBehaviour : MonoBehaviour
 
 
         if (Absorbing)
-            PlayerCloud.transform.localScale += new Vector3(0.003f, 0.003f, 0);
+            PlayerCloud.transform.localScale += new Vector3(0.6f, 0.6f, 0) * Time.deltaTime;
 
         if (PlayerCloud.transform.localScale.x > PlayerRainSize)
         {
@@ -74,7 +74,7 @@ public class PlayerBehaviour : MonoBehaviour
 
             if (PlayerCloud.transform.localScale.x >  PlayerMinSize)
             {
-                PlayerCloud.transform.localScale -= new Vector3(0.0005f, 0.0005f, 0);
+                PlayerCloud.transform.localScale -= new Vector3(0.2f, 0.2f, 0) * Time.deltaTime;
             }
             else
             {
